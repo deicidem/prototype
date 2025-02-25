@@ -12,39 +12,39 @@ on:
 
 jobs:
   build-root:
-      name: Install, Lint, Test, and Build
-      runs-on: ubuntu-latest
+    name: Install, Lint, Test, and Build
+    runs-on: ubuntu-latest
 
-      steps:
-        - name: Checkout code
-          uses: actions/checkout@v4
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-        - name: Setup Node.js
-          uses: actions/setup-node@v4
-          with:
-            node-version: 20
-            cache: 'npm'
-            cache-dependency-path: package-lock.json
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
 
-        - name: Install dependencies
-          run: npm ci
-          working-directory: apps/root
+      - name: Install dependencies
+        run: npm ci
+        working-directory: apps/root
 
-        - name: Run Linter
-          run: npm run lint
-          working-directory: apps/root
+      - name: Run Linter
+        run: npm run lint
+        working-directory: apps/root
 
-        - name: Run Tests
-          run: npm run test
-          working-directory: apps/root
+      - name: Run Tests
+        run: npm run test
+        working-directory: apps/root
 
-        - name: Build project
-          run: npm run build
-          working-directory: apps/root
+      - name: Build project
+        run: npm run build
+        working-directory: apps/root
 
   deploy-root:
     name: Deploy to GitHub Pages
-    needs: build
+    needs: build-root
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
 
@@ -106,7 +106,7 @@ jobs:
 
   deploy-catalog:
     name: Deploy to GitHub Pages
-    needs: build
+    needs: build-catalog
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
 
@@ -168,7 +168,7 @@ jobs:
 
   deploy-profile:
     name: Deploy to GitHub Pages
-    needs: build
+    needs: build-profile
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
 
