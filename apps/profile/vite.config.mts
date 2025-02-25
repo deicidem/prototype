@@ -21,6 +21,7 @@ export default defineConfig({
             dts: true,
             filename: 'remoteEntry.js',
             manifest: true,
+            shared: ['vue', 'vue-router', 'pinia', 'vuetify'],
         }),
         VueRouter({
             dts: 'src/typed-router.d.ts',
