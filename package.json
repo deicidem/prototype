@@ -4,7 +4,8 @@
     "description": "monorepo example",
     "workspaces": [
         "/apps/root",
-        "/apps/catalog"
+        "/apps/catalog",
+        "/apps/profile"
     ],
     "scripts": {
         "root:dev": "npm run dev -w root",
