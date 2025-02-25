@@ -7,10 +7,13 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AppHeader: typeof import('./components/AppHeader.vue')['default']
     ProductCard: typeof import('./components/ProductCard.vue')['default']
     ProductCardImage: typeof import('./components/ProductCardImage.vue')['default']
+    ProductCardImage2: typeof import('./components/ProductCardImage2.vue')['default']
     ProfileCard: typeof import('./components/ProfileCard.vue')['default']
     ProfileImage: typeof import('./components/ProfileImage.vue')['default']
+    ProfileImage2: typeof import('./components/ProfileImage2.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

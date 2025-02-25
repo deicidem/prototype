@@ -10,7 +10,8 @@
             {{ product.description }}
         </template>
         <template #default>
-            <ProductCardImage class="w-50" />
+            <ProductCardImage style="max-width: 200px" />
+            <ProductCardImage2 style="max-width: 200px" />
         </template>
         <template #actions>
             <div class="d-flex justify-space-between w-100">
@@ -26,6 +27,8 @@
 </template>
 
 <script lang="ts" setup>
+import ProductCardImage2 from './ProductCardImage2.vue';
+
 export interface Product {
     id: number;
     name: string;
@@ -43,5 +46,4 @@ const emit = defineEmits<{
 }>();
 </script>
 
-<style>
-</style>
+<style></style>

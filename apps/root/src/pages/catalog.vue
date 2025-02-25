@@ -31,7 +31,7 @@ const products: Product[] = [
         <h1 class="mb-4">
             Каталог
         </h1>
-        <div class="d-flex ga-4 flex-wrap ">
+        <div class="d-flex ga-4 flex-wrap">
             <ProductCard v-for="product in products" :key="product.id" :product="product" />
         </div>
     </div>

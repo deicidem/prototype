@@ -65,6 +65,7 @@ export default defineConfig({
     build: {
         target: 'esnext',
         rollupOptions: {
+            maxParallelFileOps: 2,
             output: {
                 globals: {
                     vue: 'Vue',
