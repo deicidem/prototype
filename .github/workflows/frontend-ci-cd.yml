@@ -12,7 +12,7 @@ on:
 
 jobs:
   build-root:
-    name: Install, Lint, Test, and Build
+    name: Root - Install, Lint, Test, and Build
     runs-on: ubuntu-latest
 
     steps:
@@ -43,7 +43,7 @@ jobs:
         working-directory: apps/root
 
   deploy-root:
-    name: Deploy to GitHub Pages
+    name: Root - Deploy to GitHub Pages
     needs: build-root
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
@@ -74,7 +74,7 @@ jobs:
           folder: apps/root/dist
 
   build-catalog:
-    name: Install, Lint, Test, and Build
+    name: Catalog - Install, Lint, Test, and Build
     runs-on: ubuntu-latest
 
     steps:
@@ -105,7 +105,7 @@ jobs:
         working-directory: apps/catalog
 
   deploy-catalog:
-    name: Deploy to GitHub Pages
+    name: Catalog - Deploy to GitHub Pages
     needs: build-catalog
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
@@ -136,7 +136,7 @@ jobs:
           folder: apps/catalog/dist
 
   build-profile:
-    name: Install, Lint, Test, and Build
+    name: Profile - Install, Lint, Test, and Build
     runs-on: ubuntu-latest
 
     steps:
@@ -167,7 +167,7 @@ jobs:
         working-directory: apps/profile
 
   deploy-profile:
-    name: Deploy to GitHub Pages
+    name: Profile - Deploy to GitHub Pages
     needs: build-profile
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
