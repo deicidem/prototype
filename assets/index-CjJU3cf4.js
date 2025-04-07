@@ -1,1 +1,0 @@
-import{_ as r}from"./_plugin-vue_export-helper-DlAUqK2U.js";import{L as o,D as t,M as n}from"./index-D8jRio3I.js";import"./root__mf_v__runtimeInit__mf_v__-CpgtMQsQ.js";import"./preload-helper-CLcXU_4U.js";const s={};function a(c,e){return t(),o("div",null,e[0]||(e[0]=[n("h1",null,"Главная",-1)]))}const p=r(s,[["render",a]]);export{p as default};
