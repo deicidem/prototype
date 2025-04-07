@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-describe('profileCard', () => {
+describe('c-card', () => {
     it('should render', async () => {
         await new Promise(resolve => setTimeout(resolve, 60000));
         expect(true).toBe(true);
