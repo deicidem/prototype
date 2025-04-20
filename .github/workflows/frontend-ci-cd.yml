@@ -73,8 +73,8 @@ jobs:
           branch: gh-pages
           folder: apps/root/dist
 
-  build-catalog:
-    name: Catalog - Install, Lint, Test, and Build
+  build-b:
+    name: B - Install, Lint, Test, and Build
     runs-on: ubuntu-latest
 
     steps:
@@ -90,23 +90,23 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-        working-directory: apps/catalog
+        working-directory: apps/b
 
       - name: Run Linter
         run: npm run lint
-        working-directory: apps/catalog
+        working-directory: apps/b
 
       - name: Run Tests
         run: npm run test
-        working-directory: apps/catalog
+        working-directory: apps/b
 
       - name: Build project
         run: npm run build
-        working-directory: apps/catalog
+        working-directory: apps/b
 
-  deploy-catalog:
-    name: Catalog - Deploy to GitHub Pages
-    needs: build-catalog
+  deploy-b:
+    name: B - Deploy to GitHub Pages
+    needs: build-b
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
 
@@ -119,24 +119,24 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-          cache-dependency-path: apps/catalog/package-lock.json
+          cache-dependency-path: apps/b/package-lock.json
 
       - name: Install dependencies
         run: npm ci
-        working-directory: apps/catalog
+        working-directory: apps/b
 
       - name: Build project
         run: npm run build
-        working-directory: apps/catalog
+        working-directory: apps/b
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: apps/catalog/dist
+          folder: apps/b/dist
 
-  build-profile:
-    name: Profile - Install, Lint, Test, and Build
+  build-c:
+    name: C - Install, Lint, Test, and Build
     runs-on: ubuntu-latest
 
     steps:
@@ -152,23 +152,23 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-        working-directory: apps/profile
+        working-directory: apps/c
 
       - name: Run Linter
         run: npm run lint
-        working-directory: apps/profile
+        working-directory: apps/c
 
       - name: Run Tests
         run: npm run test
-        working-directory: apps/profile
+        working-directory: apps/c
 
       - name: Build project
         run: npm run build
-        working-directory: apps/profile
+        working-directory: apps/c
 
-  deploy-profile:
-    name: Profile - Deploy to GitHub Pages
-    needs: build-profile
+  deploy-c:
+    name: C - Deploy to GitHub Pages
+    needs: build-c
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
 
@@ -181,18 +181,18 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-          cache-dependency-path: apps/profile/package-lock.json
+          cache-dependency-path: apps/c/package-lock.json
 
       - name: Install dependencies
         run: npm ci
-        working-directory: apps/profile
+        working-directory: apps/c
 
       - name: Build project
         run: npm run build
-        working-directory: apps/profile
+        working-directory: apps/c
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: apps/profile/dist
+          folder: apps/c/dist

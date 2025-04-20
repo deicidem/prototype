@@ -4,14 +4,14 @@
     "description": "monorepo example",
     "workspaces": [
         "/apps/root",
-        "/apps/catalog",
-        "/apps/profile"
+        "/apps/b",
+        "/apps/c"
     ],
     "scripts": {
         "root:dev": "npm run dev -w root",
         "root:build": "npm run build -w root",
-        "catalog:dev": "npm run dev -w catalog",
-        "catalog:build": "npm run build -w catalog",
+        "b:dev": "npm run dev -w b",
+        "b:build": "npm run build -w b",
         "lint": "npm run dev -w root",
         "types": "tsc --build"
     },

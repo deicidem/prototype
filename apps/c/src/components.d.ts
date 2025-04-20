@@ -8,16 +8,12 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AppHeader: typeof import('./components/AppHeader.vue')['default']
-    BCard: typeof import('./components/B/BCard.vue')['default']
-    BDashboard: typeof import('./components/B/BDashboard.vue')['default']
-    CCard: typeof import('./components/C/CCard.vue')['default']
-    CDashboard: typeof import('./components/C/CDashboard.vue')['default']
     ProductCard: typeof import('./components/ProductCard.vue')['default']
     ProductCardImage: typeof import('./components/ProductCardImage.vue')['default']
     ProductCardImage2: typeof import('./components/ProductCardImage2.vue')['default']
-    CCard: typeof import('../../c/src/components/CCard.vue')['default']
-    CImage: typeof import('../../c/src/components/CImage.vue')['default']
-    CImage2: typeof import('../../c/src/components/CImage2.vue')['default']
+    CCard: typeof import('./components/CCard.vue')['default']
+    CImage: typeof import('./components/CImage.vue')['default']
+    CImage2: typeof import('./components/CImage2.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

@@ -1,9 +1,10 @@
 {
-    "name": "root",
+    "name": "b",
     "type": "module",
     "version": "0.0.0",
     "private": true,
     "scripts": {
+
         "dev": "vite",
         "test": "vitest --maxWorkers=1 --minWorkers=1",
         "build": "vite build",

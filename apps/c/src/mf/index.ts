@@ -11,12 +11,6 @@ export function initMFs() {
                 entry: 'http://localhost:4174/remoteEntry.js',
                 entryGlobalName: 'b',
             },
-            {
-                type: 'module',
-                name: 'c',
-                entry: 'http://localhost:4175/remoteEntry.js',
-                entryGlobalName: 'c',
-            },
         ],
     });
 }

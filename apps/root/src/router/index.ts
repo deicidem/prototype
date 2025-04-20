@@ -1,3 +1,4 @@
+import { addMFRoutes } from '@/mf/loaders/router';
 import { setupLayouts } from 'virtual:generated-layouts';
 // Composables
 import { createRouter, createWebHistory } from 'vue-router/auto';
@@ -26,7 +27,7 @@ router.onError((err, to) => {
 });
 
 router.isReady().then(() => {
-    // addMFRoutes(router);
+    addMFRoutes(router);
     localStorage.removeItem('vuetify:dynamic-reload');
 });
 
