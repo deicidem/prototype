@@ -4,7 +4,10 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
+<<<<<<< HEAD
 
+=======
+>>>>>>> f92b56977add7ad52e152c839f87e9b5f71b64fa
         "dev": "vite",
         "test": "vitest --maxWorkers=1 --minWorkers=1",
         "build": "vite build",
