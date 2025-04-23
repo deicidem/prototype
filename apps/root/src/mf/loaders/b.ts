@@ -1,10 +1,10 @@
 import { loadRemote } from '@module-federation/enhanced/runtime';
-import { RouterView } from 'vue-router';
+import { RouterView } from 'vue-router/auto';
 
-export const bRouteKey = 'b';
+export const bRouteKey = 'b-team';
 
 export const bRouteWrapper = {
-    path: '/b',
+    path: '/b-team',
     name: bRouteKey,
     component: RouterView,
 };

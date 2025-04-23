@@ -4,7 +4,7 @@ import { RouterView } from 'vue-router';
 export const cRouteKey = 'c';
 
 export const cRouteWrapper = {
-    path: '/c',
+    path: '/c-team',
     name: cRouteKey,
     component: RouterView,
 };

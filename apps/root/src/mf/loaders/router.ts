@@ -5,9 +5,9 @@ export async function addMFRoutes(router: Router) {
     const bRoutes = await loadBRoutes();
     console.log('bRoutes', bRoutes);
 
-    if (bRoutes) {
-        router.addRoute(bRouteKey, bRoutes[0]);
-    }
+    router.addRoute(bRouteKey, bRoutes[0]);
 
-    router.replace(router.currentRoute.value.fullPath);
+    console.log('replace');
+
+    // router.replace(router.currentRoute.value.fullPath);
 }

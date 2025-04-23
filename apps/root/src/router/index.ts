@@ -1,12 +1,18 @@
+import { bRouteWrapper } from '@/mf/loaders/b';
+import { cRouteWrapper } from '@/mf/loaders/c';
 import { addMFRoutes } from '@/mf/loaders/router';
+import indexVue from '@/pages/index.vue';
 import { setupLayouts } from 'virtual:generated-layouts';
 // Composables
-import { createRouter, createWebHistory } from 'vue-router/auto';
+import { createRouter, createWebHistory, RouterView } from 'vue-router/auto';
 import { routes } from 'vue-router/auto-routes';
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
-    routes: setupLayouts(routes),
+    routes: [
+        ...setupLayouts(routes),
+        ...setupLayouts([bRouteWrapper, cRouteWrapper]),
+    ],
 });
 
 // Workaround for https://github.com/vitejs/vite/issues/11804

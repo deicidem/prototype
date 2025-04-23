@@ -6,6 +6,9 @@ import { registerPlugins } from '@/plugins';
 import { createApp } from 'vue';
 // Components
 import App from './App.vue';
+import { initMFs } from './mf';
+
+initMFs();
 
 const app = createApp(App);
 

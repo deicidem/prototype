@@ -26,7 +26,6 @@ router.onError((err, to) => {
 });
 
 router.isReady().then(() => {
-    // addMFRoutes(router);
     localStorage.removeItem('vuetify:dynamic-reload');
 });
 

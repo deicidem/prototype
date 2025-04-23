@@ -1,7 +1,7 @@
 {
     "name": "monorepo",
     "version": "1.0.0",
-    "description": "monorepo example",
+    "description": "monorepo",
     "workspaces": [
         "/apps/root",
         "/apps/b",

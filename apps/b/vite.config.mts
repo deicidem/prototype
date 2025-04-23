@@ -16,12 +16,15 @@ export default defineConfig({
     base: '/',
     plugins: [
         federation({
-            name: 'root',
-            dev: true,
-            dts: true,
+            name: 'b',
             filename: 'remoteEntry.js',
             manifest: true,
+            dev: true,
+            dts: true,
             shared: ['vue', 'vue-router', 'pinia', 'vuetify'],
+            exposes: {
+                './routes': './src/mf/exposes/routes/index.ts',
+            },
         }),
         VueRouter({
             dts: 'src/typed-router.d.ts',

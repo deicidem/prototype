@@ -8,7 +8,7 @@ export function initMFs() {
             {
                 type: 'module',
                 name: 'b',
-                entry: 'http://localhost:4174/remoteEntry.js',
+                entry: 'http://localhost:3001/remoteEntry.js',
                 entryGlobalName: 'b',
             },
             {
