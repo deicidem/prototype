@@ -1,7 +1,7 @@
 {
     "extends": "@vue/tsconfig/tsconfig.dom.json",
     "compilerOptions": {
-        // "composite": true,
+        "composite": true,
         // "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
         "baseUrl": ".",
         "paths": {
@@ -14,8 +14,11 @@
     "include": [
         "env.d.ts",
         "src/**/*",
-        "src/**/*.vue"
-, "../c/src/components/CImage2.vue", "../c/src/components/CImage.vue", "../c/src/components/CCard.vue"    ],
+        "src/**/*.vue",
+        "../c/src/components/CImage2.vue",
+        "../c/src/components/CImage.vue",
+        "../c/src/components/CCard.vue"
+    ],
     "exclude": [
         "src/**/__tests__/*"
     ]

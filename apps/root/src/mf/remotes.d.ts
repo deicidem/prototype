@@ -1,6 +1,6 @@
-// declare module 'b/routes' {
-//     import type { BRoutes } from '@mf-b/routes';
+declare module 'b/routes' {
+    import type { BRoutes } from 'b';
 
-//     const routes: BRoutes;
-//     export default routes;
-// }
+    const routes: BRoutes;
+    export default routes;
+}

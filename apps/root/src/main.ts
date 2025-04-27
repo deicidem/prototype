@@ -1,5 +1,4 @@
 // Plugins
-
 import { registerPlugins } from '@/plugins';
 
 // Composables

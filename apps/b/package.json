@@ -3,6 +3,8 @@
     "type": "module",
     "version": "0.0.0",
     "private": true,
+    "packageManager": "pnpm@10.9.0",
+    "types": "./dist/index.d.ts",
     "scripts": {
 
         "dev": "vite",
@@ -11,7 +13,9 @@
         "preview": "vite build && vite preview",
         "build-only": "vite build",
         "type-check": "vue-tsc --build --force",
-        "lint": "eslint . --fix"
+        "lint": "eslint . --fix",
+        "build-tsc": "tsc"
+
     },
     "dependencies": {
         "@mdi/font": "7.4.47",

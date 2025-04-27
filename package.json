@@ -1,12 +1,9 @@
 {
     "name": "monorepo",
     "version": "1.0.0",
+    "packageManager": "pnpm@10.9.0",
     "description": "monorepo",
-    "workspaces": [
-        "/apps/root",
-        "/apps/b",
-        "/apps/c"
-    ],
+
     "scripts": {
         "root:dev": "npm run dev -w root",
         "root:build": "npm run build -w root",

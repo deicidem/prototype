@@ -3,6 +3,7 @@
     "type": "module",
     "version": "0.0.0",
     "private": true,
+    "packageManager": "pnpm@10.9.0",
     "scripts": {
         "dev": "vite",
         "test": "vitest --maxWorkers=1 --minWorkers=1",
@@ -12,10 +13,11 @@
         "type-check": "vue-tsc --build --force",
         "lint": "eslint . --fix"
     },
+
     "dependencies": {
-        "b": "workspace:*",
         "@mdi/font": "7.4.47",
         "axios": "^1.7.9",
+        "b": "workspace:*",
         "core-js": "^3.37.1",
         "roboto-fontface": "*",
         "vue": "^3.4.31",

@@ -1,5 +1,5 @@
 import { routes } from 'vue-router/auto-routes';
 
-export type BRoutes = typeof routes;
+export type Routes = typeof routes;
 
 export default routes;

@@ -1,4 +1,5 @@
 import { loadRemote } from '@module-federation/enhanced/runtime';
+
 import { RouterView } from 'vue-router/auto';
 
 export const bRouteKey = 'b-team';
@@ -13,8 +14,8 @@ export async function loadBRoutes() {
     console.log('load b routes');
 
     try {
-        const importRes = await loadRemote('b/routes') as any;
-        return importRes.default;
+        const importRes = await loadRemote<typeof import('b/routes')>('b/routes');
+        return importRes?.default;
     }
     catch (error) {
         console.error(error);
