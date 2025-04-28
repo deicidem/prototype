@@ -5,11 +5,11 @@
     "description": "monorepo",
 
     "scripts": {
-        "root:dev": "npm run dev -w root",
-        "root:build": "npm run build -w root",
-        "b:dev": "npm run dev -w b",
-        "b:build": "npm run build -w b",
-        "lint": "npm run dev -w root",
+        "root:dev": "pnpm run  --filter root dev",
+        "root:build": "pnpm run build --filter root",
+        "b:dev": "pnpm run  --filter b dev",
+        "b:build": "pnpm run build --filter b",
+        "lint": "pnpm run dev --filter root",
         "types": "tsc --build"
     },
     "devDependencies": {

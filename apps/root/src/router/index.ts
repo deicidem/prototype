@@ -1,18 +1,20 @@
-import { bRouteWrapper } from '@/mf/loaders/b';
-import { cRouteWrapper } from '@/mf/loaders/c';
-import { addMFRoutes } from '@/mf/loaders/router';
-import indexVue from '@/pages/index.vue';
+import { addMFRoutes, routeWrappers } from '@/mf/loaders/router';
 import { setupLayouts } from 'virtual:generated-layouts';
 // Composables
-import { createRouter, createWebHistory, RouterView } from 'vue-router/auto';
+import { createRouter, createWebHistory } from 'vue-router';
 import { routes } from 'vue-router/auto-routes';
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
         ...setupLayouts(routes),
-        ...setupLayouts([bRouteWrapper, cRouteWrapper]),
+        ...setupLayouts(routeWrappers),
     ],
+});
+
+router.isReady().then(() => {
+    localStorage.removeItem('vuetify:dynamic-reload');
+    addMFRoutes(router);
 });
 
 // Workaround for https://github.com/vitejs/vite/issues/11804
@@ -30,11 +32,6 @@ router.onError((err, to) => {
     else {
         console.error(err);
     }
-});
-
-router.isReady().then(() => {
-    addMFRoutes(router);
-    localStorage.removeItem('vuetify:dynamic-reload');
 });
 
 export default router;

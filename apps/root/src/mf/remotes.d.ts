@@ -1,6 +1,6 @@
 declare module 'b/routes' {
-    import type { BRoutes } from 'b';
+    import type { Routes } from 'b';
 
-    const routes: BRoutes;
+    const routes: Routes;
     export default routes;
 }

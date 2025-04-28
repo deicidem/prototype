@@ -1,6 +1,8 @@
 {
     "compilerOptions": {
-        "target": "ES2020",
+        "incremental": true,
+        "composite": true,
+        "target": "ESNext",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "baseUrl": ".",
@@ -24,8 +26,5 @@
         "env.d.ts",
         "src/**/*",
         "src/**/*.vue"
-    ],
-    "exclude": [
-        "src/**/__tests__/*"
     ]
 }

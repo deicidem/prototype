@@ -1,15 +1,15 @@
 import { loadRemote } from '@module-federation/enhanced/runtime';
 import { RouterView } from 'vue-router';
 
-export const cRouteKey = 'c';
+export const C_ROUTE_KEY = 'c';
 
 export const cRouteWrapper = {
     path: '/c-team',
-    name: cRouteKey,
+    name: C_ROUTE_KEY,
     component: RouterView,
 };
 
-export async function loadBRoutes() {
+export async function loadCRoutes() {
     console.log('load c routes');
 
     try {

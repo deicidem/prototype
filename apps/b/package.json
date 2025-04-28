@@ -5,8 +5,10 @@
     "private": true,
     "packageManager": "pnpm@10.9.0",
     "types": "./dist/index.d.ts",
+    "publishConfig": {
+        "access": "public"
+    },
     "scripts": {
-
         "dev": "vite",
         "test": "vitest --maxWorkers=1 --minWorkers=1",
         "build": "vite build",
