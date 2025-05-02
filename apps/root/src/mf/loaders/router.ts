@@ -1,5 +1,5 @@
 import type { Router, RouteRecordRaw } from 'vue-router';
-import loadingVue from '@/pages/loading.vue';
+import Loading from '@/pages/loading.vue';
 import { RouterView } from 'vue-router';
 import { B_ROUTE_KEY, loadBRoutes } from './b';
 import { C_ROUTE_KEY, loadCRoutes } from './c';
@@ -14,7 +14,7 @@ export const routeWrappers = routeLoaders.map((rl) => {
         path: `/${rl.key}`,
         name: rl.key,
         component: RouterView,
-        children: [{ path: ':path(.*)', component: loadingVue }],
+        children: [{ path: ':path(.*)', component: Loading }],
     };
 });
 
@@ -35,7 +35,9 @@ export async function addMFRoutes(router: Router) {
     const promises: Promise<any>[] = [];
 
     routeLoaders.forEach((rl) => {
-        promises.push(rl.loader().then(routes => addRoutes(router, rl.key, routes)));
+        promises.push(rl.loader().then(routes => addRoutes(router, rl.key, routes)).catch((error) => {
+            console.error(`${rl.key} loaded with error: `, { error });
+        }));
     });
 
     return await Promise.all(promises);

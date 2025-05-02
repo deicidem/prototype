@@ -1,14 +1,33 @@
 {
-    "references": [
-        {
-            "path": "./tsconfig.node.json"
+    "compilerOptions": {
+        "incremental": true,
+        "composite": true,
+        "target": "ESNext",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "rootDir": ".",
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "paths": {
+            "@/*": [
+                "./src/*"
+            ]
         },
-        {
-            "path": "./tsconfig.app.json"
-        },
-        {
-            "path": "../b"
-        }
-    ],
-    "files": []
+        "allowJs": true,
+        "noImplicitAny": true,
+        "declaration": true, // Создавать ли соответствующие файлы ".d.ts"?
+        "outDir": "lib",
+        "sourceMap": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true
+    },
+    "include": [
+        "env.d.ts",
+        "src/**/*",
+        "src/*",
+        "src/**/*.vue",
+        "src/*.vue"
+    ]
 }

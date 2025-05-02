@@ -2,18 +2,27 @@
     "name": "root",
     "type": "module",
     "version": "0.0.0",
-    "private": true,
     "packageManager": "pnpm@10.9.0",
+    "publishConfig": {
+        "access": "public"
+    },
+    "exports": {
+        ".": {
+            "types": "./lib/src/index.d.ts"
+        },
+        "./stores": {
+            "types": "./lib/src/mf/expose/store/index.d.ts"
+        }
+    },
     "scripts": {
         "dev": "vite",
         "test": "vitest --maxWorkers=1 --minWorkers=1",
         "build": "vite build",
         "preview": "vite build && vite preview",
         "build-only": "vite build",
-        "type-check": "vue-tsc --build --force",
+        "type-check": "vue-tsc --declaration --emitDeclarationOnly && tsc-alias",
         "lint": "eslint . --fix"
     },
-
     "dependencies": {
         "@mdi/font": "7.4.47",
         "axios": "^1.7.9",

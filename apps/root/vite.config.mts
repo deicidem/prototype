@@ -1,13 +1,12 @@
 import { fileURLToPath, URL } from 'node:url';
 import { federation } from '@module-federation/vite';
+
 import Vue from '@vitejs/plugin-vue';
-// Plugins
 import AutoImport from 'unplugin-auto-import/vite';
 import Fonts from 'unplugin-fonts/vite';
 import Components from 'unplugin-vue-components/vite';
-import VueRouter from 'unplugin-vue-router/vite';
 
-// Utilities
+import VueRouter from 'unplugin-vue-router/vite';
 import { defineConfig } from 'vite';
 import Layouts from 'vite-plugin-vue-layouts';
 import Vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
@@ -17,61 +16,34 @@ export default defineConfig({
     plugins: [
         federation({
             name: 'root',
-            dev: true,
-            dts: true,
             filename: 'remoteEntry.js',
-            manifest: true,
             shared: ['vue', 'vue-router', 'pinia', 'vuetify'],
-        }),
-        VueRouter({
-            dts: 'src/typed-router.d.ts',
+            exposes: {
+                './stores': './src/mf/expose/store',
+            },
         }),
         Layouts(),
         AutoImport({
-            imports: [
-                'vue',
-                {
-                    'vue-router/auto': ['useRoute', 'useRouter'],
-                },
-            ],
+            imports: ['vue', { 'vue-router/auto': ['useRoute', 'useRouter'] }],
             dts: 'src/auto-imports.d.ts',
-            eslintrc: {
-                enabled: true,
-            },
+            eslintrc: { enabled: true },
             vueTemplate: true,
         }),
-        Components({
-            dts: 'src/components.d.ts',
-        }),
-        Vue({
-            template: { transformAssetUrls },
-        }),
+        VueRouter({ dts: 'src/typed-router.d.ts' }),
+        Components({ dts: 'src/components.d.ts' }),
+        Vue({ template: { transformAssetUrls } }),
         // https://github.com/vuetifyjs/vuetify-loader/tree/master/packages/vite-plugin#readme
         Vuetify({
             autoImport: true,
-            styles: {
-                configFile: 'src/styles/settings.scss',
-            },
+            styles: { configFile: 'src/styles/settings.scss' },
         }),
-        Fonts({
-            google: {
-                families: [{
-                    name: 'Roboto',
-                    styles: 'wght@100;300;400;500;700;900',
-                }],
-            },
-        }),
+        Fonts({ google: { families: [{ name: 'Roboto', styles: 'wght@100;300;400;500;700;900' }] } }),
     ],
-
     build: {
         target: 'esnext',
         rollupOptions: {
             maxParallelFileOps: 2,
-            output: {
-                globals: {
-                    vue: 'Vue',
-                },
-            },
+            output: { globals: { vue: 'Vue' } },
         },
     },
     define: { 'process.env': {} },

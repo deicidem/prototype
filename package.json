@@ -3,7 +3,6 @@
     "version": "1.0.0",
     "packageManager": "pnpm@10.9.0",
     "description": "monorepo",
-
     "scripts": {
         "root:dev": "pnpm run  --filter root dev",
         "root:build": "pnpm run build --filter root",

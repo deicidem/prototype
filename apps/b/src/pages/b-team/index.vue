@@ -1,5 +1,13 @@
+<script setup lang="ts">
+import { storeToRefs } from 'pinia';
+import { useUserStore } from 'root/stores';
+
+const { isAuthenticated } = storeToRefs(useUserStore());
+</script>
+
 <template>
     <div>
+        {{ isAuthenticated }}
         <RouterLink to="/b-team/second">
             Вторая страница
         </RouterLink>

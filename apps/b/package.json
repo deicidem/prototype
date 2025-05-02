@@ -2,7 +2,6 @@
     "name": "b",
     "type": "module",
     "version": "0.0.0",
-    "private": true,
     "packageManager": "pnpm@10.9.0",
     "types": "./dist/index.d.ts",
     "publishConfig": {
@@ -14,16 +13,16 @@
         "build": "vite build",
         "preview": "vite build && vite preview",
         "build-only": "vite build",
-        "type-check": "vue-tsc --build --force",
+        "type-check": "vue-tsc --declaration --emitDeclarationOnly && tsc-alias",
         "lint": "eslint . --fix",
         "build-tsc": "tsc"
-
     },
     "dependencies": {
         "@mdi/font": "7.4.47",
         "axios": "^1.7.9",
         "core-js": "^3.37.1",
         "roboto-fontface": "*",
+        "root": "workspace:*",
         "vue": "^3.4.31",
         "vuetify": "^3.6.14"
     },
@@ -44,6 +43,7 @@
         "pinia": "^2.1.7",
         "sass": "1.77.8",
         "sass-embedded": "^1.77.8",
+        "tsc-alias": "^1.8.15",
         "typescript": "~5.6.3",
         "unplugin-auto-import": "^0.17.6",
         "unplugin-fonts": "^1.1.1",

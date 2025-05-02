@@ -18,12 +18,17 @@ export default defineConfig({
         federation({
             name: 'b',
             filename: 'remoteEntry.js',
-            manifest: true,
-            dev: true,
-            dts: true,
             shared: ['vue', 'vue-router', 'pinia', 'vuetify'],
             exposes: {
                 './routes': './src/mf/exposes/routes/index.ts',
+            },
+            remotes: {
+                root: {
+                    type: 'module',
+                    name: 'root',
+                    entry: 'http://localhost:3000/remoteEntry.js',
+                    entryGlobalName: 'root',
+                },
             },
         }),
         VueRouter({
@@ -65,7 +70,6 @@ export default defineConfig({
             },
         }),
     ],
-
     build: {
         target: 'esnext',
         rollupOptions: {
@@ -94,7 +98,7 @@ export default defineConfig({
         ],
     },
     server: {
-        port: 3000,
+        port: 3001,
         proxy: {
             // Все запросы к /api будут проксироваться на бекенд
             '/api': {
