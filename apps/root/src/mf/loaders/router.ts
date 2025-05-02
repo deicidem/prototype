@@ -12,9 +12,12 @@ const routeLoaders = [
 export const routeWrappers = routeLoaders.map((rl) => {
     return {
         path: `/${rl.key}`,
-        name: rl.key,
+        name: `${rl.key}`,
         component: RouterView,
-        children: [{ path: ':path(.*)', component: Loading }],
+        children: [
+            { path: '', component: Loading, name: `${rl.key}-loading` },
+            { path: ':path(.*)', component: Loading },
+        ],
     };
 });
 
@@ -23,11 +26,18 @@ function addRoutes(router: Router, teamKey: string, routes: RouteRecordRaw[] | u
         return;
     }
 
+    router.removeRoute(`${teamKey}-loading`);
     router.addRoute(teamKey, routes[0]);
 
-    const isOnTeamPage = router.currentRoute.value.fullPath.includes(teamKey);
+    let currentPath = router.currentRoute.value.fullPath;
+    if (currentPath.endsWith('/')) {
+        currentPath = currentPath.substring(0, currentPath.length - 1);
+    }
+
+    const isOnTeamPage = currentPath.includes(teamKey);
+
     if (isOnTeamPage) {
-        router.replace(router.currentRoute.value.fullPath);
+        router.replace(currentPath);
     }
 }
 
