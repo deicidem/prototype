@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-C39MzWg4.js","assets/auto-routes-Dc3Vjy3E.js","assets/preload-helper-CLcXU_4U.js"])))=>i.map(i=>d[i]);
+import{_ as o}from"./preload-helper-CLcXU_4U.js";const s={"./routes":async()=>{const t=await o(()=>import("./index-C39MzWg4.js"),__vite__mapDeps([0,1,2])),e={};return Object.assign(e,t),Object.defineProperty(e,"__esModule",{value:!0,enumerable:!1}),e}};export{s as default};
