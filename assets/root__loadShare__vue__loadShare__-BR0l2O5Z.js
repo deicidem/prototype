@@ -1,1 +1,0 @@
-import{r as o,i as r}from"./root__mf_v__runtimeInit__mf_v__-C_EIj1Ck.js";const{loadShare:_}=r,{initPromise:t}=o,n=t.then(e=>_("vue",{customShareInfo:{shareConfig:{singleton:!1,strictVersion:void 0,requiredVersion:"^3.5.13"}}})),s=await n.then(e=>e());var a=s;export{a as r};
