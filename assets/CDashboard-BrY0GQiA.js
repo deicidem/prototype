@@ -1,1 +1,0 @@
-import{_ as e,V as o}from"./VCard-C3kbdVW1.js";import{C as r,D as s,E as n,J as _}from"./index-pYQDhzlS.js";const a={};function c(i,t){return s(),r(o,{class:"w-100","min-height":"200px"},{title:n(()=>t[0]||(t[0]=[_(" Дашборд команды C ")])),_:1})}const f=e(a,[["render",c]]);export{f as _};

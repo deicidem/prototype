@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-8l3pZDbe.js","assets/root__loadShare__pinia__loadShare__-BImxNIjv.js","assets/root__mf_v__runtimeInit__mf_v__-C_EIj1Ck.js","assets/root__loadShare__vue__loadShare__-BR0l2O5Z.js"])))=>i.map(i=>d[i]);
+import{_ as r}from"./preload-helper-CLcXU_4U.js";const a={"./stores":async()=>{const t=await r(()=>import("./index-8l3pZDbe.js").then(o=>o.i),__vite__mapDeps([0,1,2,3])),e={};return Object.assign(e,t),Object.defineProperty(e,"__esModule",{value:!0,enumerable:!1}),e}};export{a as default};
