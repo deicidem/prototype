@@ -47,7 +47,6 @@ jobs:
     name: Root - Deploy to GitHub Pages
     needs: build-root
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
 
     steps:
       - uses: actions/checkout@v4
@@ -120,7 +119,6 @@ jobs:
     name: B - Deploy to GitHub Pages
     needs: build-b
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
 
     steps:
       - uses: actions/checkout@v4
@@ -194,7 +192,6 @@ jobs:
     name: C - Deploy to GitHub Pages
     needs: build-c
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
 
     steps:
       - uses: actions/checkout@v4
