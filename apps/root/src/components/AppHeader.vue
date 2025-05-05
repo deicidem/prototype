@@ -1,9 +1,11 @@
 <script lang="ts" setup>
+import { useMFStore } from '@/stores/mfState';
 import { useUserStore } from '@/stores/user';
 import { storeToRefs } from 'pinia';
 
 const { logout } = useUserStore();
 const { isAuthenticated, user } = storeToRefs(useUserStore());
+const { isBTeamAccessible, isCTeamAccessible } = storeToRefs(useMFStore());
 </script>
 
 <template>
@@ -12,10 +14,10 @@ const { isAuthenticated, user } = storeToRefs(useUserStore());
             <VBtn to="/">
                 Главная
             </VBtn>
-            <VBtn to="/b-team">
+            <VBtn v-if="isBTeamAccessible" to="/b-team">
                 Функционал B
             </VBtn>
-            <VBtn to="/c-team">
+            <VBtn v-if="isCTeamAccessible" to="/c-team">
                 Функционал C
             </VBtn>
         </template>

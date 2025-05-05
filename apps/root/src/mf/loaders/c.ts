@@ -1,6 +1,7 @@
 import { loadRemote } from '@module-federation/enhanced/runtime';
 
-export const C_ROUTE_KEY = 'c-team';
+export const C_ROUTE_KEY = 'c-team' as const;
+export const C_KEY = 'c' as const;
 
 export async function loadCRoutes() {
     console.log('load c routes');
