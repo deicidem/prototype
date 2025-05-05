@@ -1,4 +1,6 @@
-export async function loadStore() {
+import {useUserStore} from 'root'
+
+export async function loadStore(): Promise<typeof useUserStore> {
     console.log('loadStore');
     try {
         const { useUserStore } = await import('root/stores');

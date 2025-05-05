@@ -1,1 +1,1 @@
-export * from './mf/exposes';
+export * from './mf/expose';

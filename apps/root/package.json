@@ -26,7 +26,6 @@
     "dependencies": {
         "@mdi/font": "7.4.47",
         "axios": "^1.7.9",
-        "b": "workspace:*",
         "core-js": "^3.37.1",
         "roboto-fontface": "*",
         "vue": "^3.4.31",

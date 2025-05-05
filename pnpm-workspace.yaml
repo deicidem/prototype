@@ -1,7 +1,7 @@
-# pnpm-workspace.yaml
-
 packages:
   - "apps/*"
 
 workspaces:
   - "apps/*"
+
+shamefullyHoist: true
