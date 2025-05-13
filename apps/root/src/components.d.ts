@@ -10,6 +10,7 @@ declare module 'vue' {
     AppHeader: typeof import('./components/AppHeader.vue')['default']
     LoginForm: typeof import('./components/auth/LoginForm.vue')['default']
     RegisterForm: typeof import('./components/auth/RegisterForm.vue')['default']
+    RemoteComponent: typeof import('./components/RemoteComponent.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

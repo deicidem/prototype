@@ -1,6 +1,17 @@
 {
     "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+        "paths": {
+            "@/*": [
+                "./src/*"
+            ]
+        }
+    },
     "references": [
         { "path": "../b" }
+    ],
+    "include": [
+        "env.d.ts",
+        "src"
     ]
 }

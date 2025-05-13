@@ -7,5 +7,8 @@
             Главная
         </h1>
         <div class="d-flex ga-4 flex-wrap" />
+        <RemoteComponent v-slot="{ component }" component="BDashboard" namespace="b">
+            <component :is="component" />
+        </RemoteComponent>
     </div>
 </template>

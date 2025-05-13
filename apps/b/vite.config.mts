@@ -20,7 +20,8 @@ export default defineConfig({
             filename: 'remoteEntry.js',
             shared: ['vue', 'vue-router', 'pinia', 'vuetify'],
             exposes: {
-                './routes': './src/mf/exposes/routes/index.ts',
+                './routes': './src/mf/expose/routes/index.ts',
+                './components': './src/mf/expose/components/index.ts',
             },
             remotes: {
                 root: {

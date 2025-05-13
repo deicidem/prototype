@@ -1,4 +1,4 @@
-import {useUserStore} from 'root'
+import type { useUserStore } from 'root';
 
 export async function loadStore(): Promise<typeof useUserStore> {
     console.log('loadStore');

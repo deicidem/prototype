@@ -1,18 +1,20 @@
 {
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
-        "tsBuildInfoFile": "../../.tsbuildinfo/b.tsbuild.info",
         "baseUrl": ".",
-        "rootDir": "."
+        "rootDir": "src",
+        "paths": {
+            "@/*": [
+                "./src/*"
+            ]
+        },
+        "outDir": "lib"
     },
     "references": [
         { "path": "../root" }
     ],
     "include": [
         "env.d.ts",
-        "src/**/*",
-        "src/*",
-        "src/**/*.vue",
-        "src/*.vue"
+        "src"
     ]
 }
