@@ -9,3 +9,9 @@ export async function loadCRoutes() {
     const importRes = await loadRemote('c/routes') as any;
     return importRes.default;
 }
+
+export async function loadСComponents() {
+    console.log('load b components');
+    const importRes = await loadRemote<typeof import('с/components')>('с/components');
+    return importRes;
+}

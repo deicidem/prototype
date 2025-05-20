@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import CDashboard from '@/components/CDashboard.vue';
 </script>
 
 <template>

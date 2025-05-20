@@ -11,3 +11,17 @@ declare module 'b/components' {
     const BDashboard: BDashboard;
     export { BDashboard };
 }
+
+declare module 'с/routes' {
+    import type { Routes } from 'с';
+
+    const routes: Routes;
+    export default routes;
+}
+
+declare module 'с/components' {
+    import type { СDashboard } from 'с';
+
+    const СDashboard: СDashboard;
+    export { СDashboard };
+}

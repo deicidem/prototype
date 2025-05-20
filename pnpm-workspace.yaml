@@ -1,7 +1,4 @@
 packages:
   - "apps/*"
 
-workspaces:
-  - "apps/*"
-
 shamefullyHoist: true

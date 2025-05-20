@@ -10,8 +10,13 @@ const { user } = storeToRefs(useUserStore());
         <template #title>
             Дашборд команды B
         </template>
-        <template v-if="user" #subtitle>
-            Пользователь: {{ user.userName }}
+        <template #subtitle>
+            <span v-if="user">
+                Пользователь: {{ user.userName }}
+            </span>
+            <!-- <span v-else>
+                Авторизуйтесь, для получения информации
+            </span> -->
         </template>
     </VCard>
 </template>

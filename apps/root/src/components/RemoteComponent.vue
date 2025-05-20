@@ -2,12 +2,7 @@
     <div>
         <slot v-if="loadedComponent" :component="loadedComponent" />
         <slot v-else-if="error" name="loader">
-            <VProgressCircular
-                color="primary"
-                indeterminate
-                width="2"
-                size="64"
-            />
+            <div>Ошибка при загрузке компонента</div>
         </slot>
         <slot v-else name="loader">
             <VProgressCircular
@@ -20,33 +15,31 @@
     </div>
 </template>
 
-<script lang="ts" setup>
+<script lang="ts" setup generic="T extends MFComponent">
+import type { MFComponent, MFComponents } from '@/mf/loaders/components';
 import type { MFKeys } from '@/mf/loaders/types';
-import { loadRemote } from '@module-federation/enhanced/runtime';
+import { loadMFComponent } from '@/mf/loaders/components';
 
 const props = defineProps<{
-    component: keyof typeof import('b/components');
+    component: T;
     namespace: MFKeys;
 }>();
 
-const loadedComponent = shallowRef<any>();
+const slots = defineSlots<{
+    loader: () => any;
+    default: (props: { component: MFComponents[T] }) => any;
+}>();
+
+const loadedComponent = shallowRef<MFComponents[T]>();
 const error = ref(false);
 
-async function loadComponent() {
-    const c = await loadRemote<typeof import('b/components')>('b/components');
-    if (c) {
-        loadedComponent.value = c[props.component];
+onMounted(async () => {
+    try {
+        const component = await loadMFComponent(props.namespace, props.component);
+        loadedComponent.value = component;
     }
-    return c;
-}
-
-onMounted(() => {
-    loadComponent().catch((e) => {
-        console.log(e);
-    });
+    catch (error) {
+        error.value = true;
+    }
 });
 </script>
-
-<style>
-
-</style>

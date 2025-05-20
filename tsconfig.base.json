@@ -9,7 +9,7 @@
         "moduleResolution": "bundler",
         "allowJs": true,
         "noImplicitAny": true,
-        "declaration": true, // Создавать ли соответствующие файлы ".d.ts"?
+        "declaration": true,
         "outDir": "lib",
         "sourceMap": true,
         "allowSyntheticDefaultImports": true,
