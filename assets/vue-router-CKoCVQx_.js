@@ -1,4 +1,4 @@
-import{r as y}from"./root__loadShare__vue__loadShare__-d3MD0kem.js";import"./root__mf_v__runtimeInit__mf_v__-C_EIj1Ck.js";/*!
+import{b as y}from"./b__loadShare__vue__loadShare__-BNSKGd55.js";import"./b__mf_v__runtimeInit__mf_v__-CbHi91sL.js";/*!
   * vue-router v4.5.1
   * (c) 2025 Eduardo San Martin Morote
   * @license MIT

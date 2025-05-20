@@ -1,1 +1,0 @@
-import{r as e,i as r}from"./root__mf_v__runtimeInit__mf_v__-C_EIj1Ck.js";const{loadShare:i}=r,{initPromise:n}=e,_=n.then(o=>i("pinia",{customShareInfo:{shareConfig:{singleton:!1,strictVersion:void 0,requiredVersion:"^2.3.1"}}})),t=await _.then(o=>o());var s=t;export{s as r};

@@ -1,0 +1,1 @@
+import{b as _,i as o}from"./b__mf_v__runtimeInit__mf_v__-CbHi91sL.js";const{loadShare:n}=o,{initPromise:r}=_,s=r.then(e=>n("vue",{customShareInfo:{shareConfig:{singleton:!1,strictVersion:void 0,requiredVersion:"^3.5.14"}}})),t=await s.then(e=>e());var a=t;export{a as b};
